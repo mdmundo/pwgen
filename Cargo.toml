@@ -1,0 +1,15 @@
+[package]
+name = "pwgen"
+version = "0.1.0"
+edition = "2021"
+description = "Generate passwords"
+documentation = "https://docs.rs/crate/pwgen"
+readme = "README.md"
+homepage = "https://crates.io/crates/pwgen"
+repository = "https://github.com/mdmundo/pwgen"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = "0.3.25"
