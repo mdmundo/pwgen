@@ -2,4 +2,20 @@
 
 # pwgen
 
-Generate passwords
+```none
+Generate passwords from the command line
+
+USAGE:
+    pwgen [FLAGS] [OPTIONS]
+
+FLAGS:
+    -h, --help       Prints help information
+    -l, --lower      Include lowercase letters
+    -n, --number     Include numbers
+    -s, --symbol     Include symbols
+    -u, --upper      Include uppercase letters
+    -V, --version    Prints version information
+
+OPTIONS:
+    -w, --width <width>    Set password width [max: 255] [default: 16]
+```
