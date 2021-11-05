@@ -1,6 +1,6 @@
 use structopt::StructOpt;
 
-/// Generate passwords
+/// Generate passwords from the command line
 #[derive(StructOpt, Debug)]
 #[structopt()]
 struct Opt {
@@ -20,7 +20,7 @@ struct Opt {
     #[structopt(short, long)]
     symbol: bool,
 
-    /// Set password width (length) between 8 ant 255
+    /// Set password width (length) [max: 255]
     #[structopt(short, long, default_value = "16")]
     width: u8,
 }
