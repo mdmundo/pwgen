@@ -20,7 +20,7 @@ struct Opt {
     #[structopt(short, long)]
     symbol: bool,
 
-    /// Set password width (length) [max: 255]
+    /// Set password width [max: 255]
     #[structopt(short, long, default_value = "16")]
     width: u8,
 }
