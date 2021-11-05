@@ -1,4 +1,3 @@
-use std::path::PathBuf;
 use structopt::StructOpt;
 
 /// Generate passwords
@@ -21,9 +20,9 @@ struct Opt {
     #[structopt(short, long)]
     symbol: bool,
 
-    /// Set password length [max: 255] [min: 8]
+    /// Set password width (length) between 8 ant 255
     #[structopt(short, long, default_value = "16")]
-    range: u8,
+    width: u8,
 }
 
 fn main() {
