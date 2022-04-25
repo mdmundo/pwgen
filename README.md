@@ -3,7 +3,7 @@
 # pwgen
 
 ```none
-pwgen 0.0.0
+pwgen 0.1.0
 Generate passwords from the command line
 
 USAGE:
