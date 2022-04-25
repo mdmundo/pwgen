@@ -3,19 +3,17 @@
 # pwgen
 
 ```none
+pwgen 0.0.0
 Generate passwords from the command line
 
 USAGE:
-    pwgen [FLAGS] [OPTIONS]
+    pwgen.exe [OPTIONS]
 
 FLAGS:
     -h, --help       Prints help information
-    -l, --lower      Include lowercase letters
-    -n, --number     Include numbers
-    -s, --symbol     Include symbols
-    -u, --upper      Include uppercase letters
     -V, --version    Prints version information
 
 OPTIONS:
-    -w, --width <width>    Set password width [max: 255] [default: 16]
+    -l, --length <length>    Set password length [max: 255] [default: 16]
+    -t, --type <type>        Set type of password: `pin`, `alpha` or `full` [default: alpha]
 ```
