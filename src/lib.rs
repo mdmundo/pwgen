@@ -1,5 +1,4 @@
-use rand::distributions::Alphanumeric;
-use rand::{thread_rng, Rng};
+use rand::{distributions::Alphanumeric, thread_rng, Rng};
 
 fn alphanum(length: u8) -> String {
     let mut rng = thread_rng();
