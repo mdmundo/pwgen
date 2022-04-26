@@ -3,31 +3,23 @@ use rand::{thread_rng, Rng};
 
 fn alphanum(length: u8) -> String {
     let mut rng = thread_rng();
-    let password: String = (0..(length as i32))
+    (0..length)
         .map(|_| rng.sample(Alphanumeric) as char)
-        .collect();
-
-    password
+        .collect()
 }
 
 fn pin(length: u8) -> String {
     let mut rng = thread_rng();
-    let mut pin = String::with_capacity(length as usize);
-    for _ in 0..length {
-        pin.push(rng.gen_range(b'0'..=b'9') as char);
-    }
-
-    pin
+    (0..length)
+        .map(|_| rng.gen_range(b'0'..=b'9') as char)
+        .collect()
 }
 
 fn everything(length: u8) -> String {
     let mut rng = thread_rng();
-    let mut password = String::with_capacity(length as usize);
-    for _ in 0..length {
-        password.push(rng.gen_range(b'!'..=b'~') as char);
-    }
-
-    password
+    (0..length)
+        .map(|_| rng.gen_range(b'!'..=b'~') as char)
+        .collect()
 }
 
 pub fn parse_option(option: &str, length: u8) -> String {
