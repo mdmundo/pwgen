@@ -22,7 +22,7 @@ fn everything(length: u8) -> String {
         .collect()
 }
 
-/// Use this to generate passwords.
+/// Generate random passwords.
 ///
 /// `option` sets the password type. It can be `pin`, `alpha` or `full`. `length` sets the password length.
 ///
