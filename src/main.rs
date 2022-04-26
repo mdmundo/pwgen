@@ -1,4 +1,4 @@
-use pwgen::parse_option;
+use pwgen::generate;
 use structopt::StructOpt;
 
 /// Generate passwords from the command line
@@ -17,5 +17,5 @@ struct Opt {
 fn main() {
     let opt = Opt::from_args();
 
-    println!("{}", parse_option(opt.r#type.as_str(), opt.length));
+    println!("{}", generate(opt.r#type.as_str(), opt.length));
 }

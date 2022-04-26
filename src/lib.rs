@@ -22,7 +22,21 @@ fn everything(length: u8) -> String {
         .collect()
 }
 
-pub fn parse_option(option: &str, length: u8) -> String {
+/// Use this to generate passwords.
+///
+/// `option` sets the password type. It can be `pin`, `alpha` or `full`. `length` sets the password length.
+///
+/// # Examples
+///
+/// ```
+/// use pwgen::generate;
+///
+/// let pw = generate("pin", 8);
+///
+/// assert_eq!(pw.len(), 8);
+/// assert!(pw.chars().all(|ch| ch.is_ascii_digit()));
+/// ```
+pub fn generate(option: &str, length: u8) -> String {
     match option {
         "pin" => pin(length),
         "full" => everything(length),
