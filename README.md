@@ -7,9 +7,10 @@ pwgen 0.1.0
 Generate passwords from the command line
 
 USAGE:
-    pwgen.exe [OPTIONS]
+    pwgen [FLAGS] [OPTIONS]
 
 FLAGS:
+        --no-copy    Do not not copy the password to the clipboard
     -h, --help       Prints help information
     -V, --version    Prints version information
 
