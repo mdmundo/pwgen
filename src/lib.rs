@@ -1,6 +1,5 @@
 //! Auxiliary functions to generate passwords.
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
-use std::convert::TryInto;
 
 /// Returns password containing alphanumeric chars.
 fn alphanum(length: u8) -> String {
