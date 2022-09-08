@@ -1,5 +1,4 @@
 //! Auxiliary functions to generate passwords.
-#![allow(clippy::implicit_return)]
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
 use std::convert::TryInto;
 

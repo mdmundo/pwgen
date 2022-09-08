@@ -1,5 +1,4 @@
 //! Generate passwords from the command line
-#![allow(clippy::print_stdout, unused_must_use)]
 use arboard::Clipboard;
 use pwgen::generate;
 use structopt::StructOpt;
@@ -29,7 +28,7 @@ fn main() {
 
     if !opt.do_not_copy {
         if let Ok(mut clipboard) = Clipboard::new() {
-            clipboard.set_text(pw);
+            let _res = clipboard.set_text(pw);
         }
     }
 }
