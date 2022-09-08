@@ -1,12 +1,6 @@
 use crate::generate;
 use rstest::rstest;
 
-#[test]
-fn it_works() {
-    let result = 2 + 2;
-    assert_eq!(result, 4);
-}
-
 #[rstest]
 #[case(0, 0)]
 #[case(4, 4)]

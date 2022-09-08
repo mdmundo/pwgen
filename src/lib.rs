@@ -1,23 +1,31 @@
+//! Auxiliary functions to generate passwords.
+#![allow(clippy::implicit_return)]
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
+use std::convert::TryInto;
 
+/// Returns password containing alphanumeric chars.
 fn alphanum(length: u8) -> String {
     let mut rng = thread_rng();
     (0..length)
-        .map(|_| rng.sample(Alphanumeric) as char)
+        .filter_map(|_| -> Option<char> { rng.sample(Alphanumeric).try_into().ok() })
         .collect()
 }
 
+/// Returns password containing ascii chars ranging from '0' to '9'.
+/// In other words, digits.
 fn pin(length: u8) -> String {
     let mut rng = thread_rng();
     (0..length)
-        .map(|_| rng.gen_range(b'0'..=b'9') as char)
+        .filter_map(|_| -> Option<char> { rng.gen_range(b'0'..=b'9').try_into().ok() })
         .collect()
 }
 
+/// Returns password containing ascii chars ranging from '!' to '~'.
+/// In other words, alphanum + symbols.
 fn everything(length: u8) -> String {
     let mut rng = thread_rng();
     (0..length)
-        .map(|_| rng.gen_range(b'!'..=b'~') as char)
+        .filter_map(|_| -> Option<char> { rng.gen_range(b'!'..=b'~').try_into().ok() })
         .collect()
 }
 
@@ -35,6 +43,8 @@ fn everything(length: u8) -> String {
 /// assert_eq!(pw.len(), 8);
 /// assert!(pw.chars().all(|ch| ch.is_ascii_digit()));
 /// ```
+#[inline]
+#[must_use]
 pub fn generate(option: &str, length: u8) -> String {
     match option {
         "pin" => pin(length),
