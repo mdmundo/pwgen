@@ -12,6 +12,8 @@
   },
   "capAdd": ["SYS_PTRACE"],
   "securityOpt": ["seccomp=unconfined"],
-  "remoteUser": "vscode",
-  "containerUser": "vscode"
+  "remoteUser": "root",
+  "containerUser": "root",
+  "updateRemoteUserUID": true,
+  "privileged": true
 }
