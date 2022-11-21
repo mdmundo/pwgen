@@ -13,7 +13,5 @@
   "capAdd": ["SYS_PTRACE"],
   "securityOpt": ["seccomp=unconfined"],
   "remoteUser": "root",
-  "containerUser": "root",
-  "updateRemoteUserUID": true,
   "privileged": true
 }
