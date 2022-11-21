@@ -1,5 +1,7 @@
 {
-  "image": "mcr.microsoft.com/vscode/devcontainers/rust",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "capAdd": ["SYS_PTRACE"],
   "securityOpt": ["seccomp=unconfined", "label=disable"],
   "remoteUser": "root",
