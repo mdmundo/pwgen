@@ -1,7 +1,7 @@
 {
   "image": "mcr.microsoft.com/vscode/devcontainers/rust",
   "capAdd": ["SYS_PTRACE"],
-  "securityOpt": ["seccomp=unconfined"],
+  "securityOpt": ["seccomp=unconfined", "label=disable"],
   "remoteUser": "root",
   "customizations": {
     "vscode": {
