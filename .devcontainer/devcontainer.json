@@ -8,6 +8,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "redhat.vscode-yaml",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
         "vadimcn.vscode-lldb",
