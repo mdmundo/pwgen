@@ -1,5 +1,5 @@
 {
-  "image": "mcr.microsoft.com/vscode/devcontainers/rust",
+  "image": "docker.io/library/rust:bullseye",
   "customizations": {
     "vscode": {
       "extensions": [
