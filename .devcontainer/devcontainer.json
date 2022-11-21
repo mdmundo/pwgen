@@ -12,6 +12,5 @@
   },
   "capAdd": ["SYS_PTRACE"],
   "securityOpt": ["seccomp=unconfined"],
-  "remoteUser": "root",
-  "privileged": true
+  "remoteUser": "root"
 }
