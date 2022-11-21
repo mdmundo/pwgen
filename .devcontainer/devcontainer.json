@@ -1,5 +1,8 @@
 {
-  "image": "docker.io/library/rust:bullseye",
+  "image": "mcr.microsoft.com/vscode/devcontainers/rust",
+  "capAdd": ["SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined"],
+  "remoteUser": "root",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,8 +12,5 @@
         "serayuzgur.crates"
       ]
     }
-  },
-  "capAdd": ["SYS_PTRACE"],
-  "securityOpt": ["seccomp=unconfined"],
-  "remoteUser": "root"
+  }
 }
