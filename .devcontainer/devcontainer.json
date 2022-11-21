@@ -8,6 +8,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
         "vadimcn.vscode-lldb",
         "rust-lang.rust-analyzer",
         "tamasfe.even-better-toml",
