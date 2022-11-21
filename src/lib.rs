@@ -1,3 +1,9 @@
+#![allow(
+    clippy::implicit_return,
+    clippy::unseparated_literal_suffix,
+    clippy::multiple_crate_versions
+)]
+
 //! Auxiliary functions to generate passwords.
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
 

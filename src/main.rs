@@ -1,3 +1,10 @@
+#![allow(
+    clippy::implicit_return,
+    clippy::unseparated_literal_suffix,
+    clippy::multiple_crate_versions,
+    clippy::print_stdout
+)]
+
 //! Generate passwords from the command line
 use arboard::Clipboard;
 use pwgen::generate;
