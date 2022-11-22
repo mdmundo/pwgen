@@ -18,9 +18,9 @@ struct Opt {
     #[structopt(short, long, default_value = "alpha")]
     r#type: String,
 
-    /// Set password length [max: 255]
+    /// Set password length
     #[structopt(short, long, default_value = "16")]
-    length: u8,
+    length: usize,
 
     /// Do not not copy the password to the clipboard
     #[structopt(long = "no-copy")]

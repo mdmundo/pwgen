@@ -7,29 +7,32 @@
 //! Auxiliary functions to generate passwords.
 use rand::{distributions::Alphanumeric, thread_rng, Rng};
 
+#[cfg(test)]
+mod tests;
+
 /// Returns password containing alphanumeric chars.
-fn alphanum(length: u8) -> String {
+fn alphanum(length: usize) -> String {
     let mut rng = thread_rng();
-    (0..length)
-        .filter_map(|_| -> Option<char> { rng.sample(Alphanumeric).try_into().ok() })
+    core::iter::repeat_with(|| char::from(rng.sample(Alphanumeric)))
+        .take(length)
         .collect()
 }
 
 /// Returns password containing ascii chars ranging from '0' to '9'.
 /// In other words, digits.
-fn pin(length: u8) -> String {
+fn pin(length: usize) -> String {
     let mut rng = thread_rng();
-    (0..length)
-        .filter_map(|_| -> Option<char> { rng.gen_range(b'0'..=b'9').try_into().ok() })
+    core::iter::repeat_with(|| char::from(rng.gen_range(b'0'..=b'9')))
+        .take(length)
         .collect()
 }
 
 /// Returns password containing ascii chars ranging from '!' to '~'.
 /// In other words, alphanum + symbols.
-fn everything(length: u8) -> String {
+fn everything(length: usize) -> String {
     let mut rng = thread_rng();
-    (0..length)
-        .filter_map(|_| -> Option<char> { rng.gen_range(b'!'..=b'~').try_into().ok() })
+    core::iter::repeat_with(|| char::from(rng.gen_range(b'!'..=b'~')))
+        .take(length)
         .collect()
 }
 
@@ -49,13 +52,10 @@ fn everything(length: u8) -> String {
 /// ```
 #[inline]
 #[must_use]
-pub fn generate(option: &str, length: u8) -> String {
+pub fn generate(option: &str, length: usize) -> String {
     match option {
         "pin" => pin(length),
         "full" => everything(length),
         &_ => alphanum(length),
     }
 }
-
-#[cfg(test)]
-mod tests;
