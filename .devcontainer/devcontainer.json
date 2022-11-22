@@ -1,0 +1,22 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "capAdd": ["SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined", "label=disable"],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vivaxy.vscode-conventional-commits",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "vadimcn.vscode-lldb",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates"
+      ]
+    }
+  }
+}
